@@ -1,0 +1,34 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <form method="POST">
+        
+        {% csrf_token %}
+        <label for="titlen">Title:<input id="titlen" type="text" name="n_title" style="font-size: 20px;line-height: 52px;letter-spacing: 0.088em;"></label><br>
+     
+        <label for="descriptionn">Description:<input id="descriptionn" type="text" name="n_description" placeholder="(Max 100 characters)" style="font-size: 20px;line-height: 52px;letter-spacing: 0.088em;"></label><br>
+                
+        <label for="daten">Date:<input id="daten" type="date" name="n_date" placeholder="When starts the listing?" style="font-size: 20px;line-height: 52px;letter-spacing: 0.088em;"></label><br>
+   
+        <label for="pricen">Price:<input type="number" id="pricen" name="n_price" min="1" max="1000" placeholder="price for start" style="font-size: 20px;line-height: 52px;letter-spacing: 0.088em;"></label><br>
+        
+     
+        <label>
+        <p>Category:</p>
+        
+            <label><input id="Home" type="radio" name="n_category" value="Home">Home</label><br>
+
+            <label><input id="Kids" type="radio" name="n_category" value="Kids">Kids</label><br>
+
+            <label><input id="Technology" type="radio" name="n_category" value="Technology">Technology</label><br>
+
+            <label><input id="Fashion" type="radio" name="n_category" value="Fashion">Fashion</label><br>
+
+            <label><input id="Other" type="radio" name="n_category" value="Other">Other </label>
+            
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+{% endblock %}
